@@ -4,9 +4,9 @@ uniq_yes_answers_sum = 0
 group_wide_yes_answers_sum = 0
 
 groups.each do |group|
-  member_answers = group.split("\n").map { |member| member.split('').uniq }
+  member_answers = group.split("\n").map(&:chars)
   group_wide_yes_answers_sum += member_answers.reduce(:&).size
-  uniq_yes_answers_sum += group.gsub(/\W/, '').split('').uniq.size
+  uniq_yes_answers_sum += group.gsub(/\W/, '').chars.uniq.size
 end
 
 pp "unique questions answered with yes by anyone in group: #{uniq_yes_answers_sum}"
