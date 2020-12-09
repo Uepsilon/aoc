@@ -45,11 +45,7 @@ end
 bag_finder = BagFinder.new(bag_rules)
 containing_bags = bag_finder.find_potential_bags_bearer(MY_BAG_COLOR) - [MY_BAG_COLOR]
 p "a #{MY_BAG_COLOR} bag can be found any bag of those #{containing_bags.size} colors: #{containing_bags.join(', ')}"
-
-
 p "a #{MY_BAG_COLOR} bag contains: #{bag_finder.bag_count_in(MY_BAG_COLOR) - 1} bags"
-
-
 
 __END__
 clear purple bags contain 5 faded indigo bags, 3 muted purple bags.
